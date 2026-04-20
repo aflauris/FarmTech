@@ -1,6 +1,8 @@
 # FarmTech Solutions - Sistema de Gestão Agrícola
 # Culturas: Soja e Milho
 
+import csv
+
 # Vetores (listas) para armazenar os dados
 culturas = []
 areas = []
@@ -19,9 +21,10 @@ def calcular_area(cultura):
 
 def calcular_insumo():
     insumo = input("Nome do insumo (ex: Herbicida, Fosfato): ")
-    quantidade_por_rua = float(input("Quantidade por rua (mL): "))
+    quantidade_por_metro = float(input("Quantidade por metro (mL/metro): "))
+    comprimento_rua = float(input("Comprimento de cada rua (metros): "))
     num_ruas = int(input("Número de ruas: "))
-    total_ml = quantidade_por_rua * num_ruas
+    total_ml = quantidade_por_metro * comprimento_rua * num_ruas
     total_litros = total_ml / 1000
     print(f"Total necessário: {total_ml} mL = {total_litros} litros")
     return insumo, total_litros
@@ -94,6 +97,14 @@ def deletar_dados():
     totais.pop(pos)
     print("✅ Registro deletado!")
 
+def exportar_csv():
+    with open('dados_farmtech.csv', 'w', newline='', encoding='utf-8') as arquivo:
+        writer = csv.writer(arquivo)
+        writer.writerow(['cultura', 'area', 'insumo', 'total_litros'])
+        for i in range(len(culturas)):
+            writer.writerow([culturas[i], areas[i], insumos[i], totais[i]])
+    print("✅ Dados exportados para dados_farmtech.csv!")
+
 # Menu principal
 while True:
     print("\n===== FARMTECH SOLUTIONS =====")
@@ -113,6 +124,7 @@ while True:
     elif opcao == "4":
         deletar_dados()
     elif opcao == "5":
+        exportar_csv()
         print("Saindo... Até logo!")
         break
     else:
