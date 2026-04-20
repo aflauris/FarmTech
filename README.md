@@ -3,7 +3,6 @@
 ## Fase 2 — Coleta de Dados com ESP32
 
 **Aluna:** Ana Flora Lauris  
-**RM:** 572202  
 **Instituição:** FIAP  
 **Estado:** São Paulo  
 **Culturas trabalhadas:** Soja e Milho  
