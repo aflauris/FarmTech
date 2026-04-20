@@ -1,10 +1,14 @@
 # FarmTech Solutions - Análise Estatística
-# Dados de área e insumos das culturas
+# Lendo dados gerados pelo Python
 
-# Dados de exemplo (baseados no que o Python coletaria)
-areas <- c(20000, 15000, 8000, 12000, 5000)
-totais_litros <- c(20, 15, 10, 18, 8)
-culturas <- c("Soja", "Milho", "Soja", "Milho", "Soja")
+# Lendo o arquivo CSV gerado pelo Python
+dados <- read.csv("dados_farmtech.csv", encoding = "UTF-8")
+
+# Extraindo as colunas
+culturas <- dados$cultura
+areas <- dados$area
+insumos <- dados$insumo
+totais_litros <- dados$total_litros
 
 # ===== ANÁLISE DE ÁREAS =====
 cat("===== FARMTECH - ANÁLISE ESTATÍSTICA =====\n\n")
