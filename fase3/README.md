@@ -65,10 +65,10 @@ A tabela `LEITURAS_ALFACE` foi criada a partir do arquivo `leituras_irrigacao_al
 ### Prints do banco
 
 #### Criação e importação da tabela
-![Importação CSV](docs/img/02-importacao-csv.png)
+![Importação CSV](02-total-leituras.png)
 
 #### SELECT geral
-![Select geral](docs/img/03-select-geral.png)
+![Select geral](01-select-geral.png)
 
 ### Consultas SQL
 
@@ -76,14 +76,14 @@ A tabela `LEITURAS_ALFACE` foi criada a partir do arquivo `leituras_irrigacao_al
 ```sql
 SELECT * FROM LEITURAS_ALFACE;
 ```
-![Select geral](docs/img/03-select-geral.png)
+![Select geral](01-select-geral.png)
 
 #### 2. Total de leituras
 ```sql
 SELECT COUNT(*) AS total_leituras FROM LEITURAS_ALFACE;
 ```
 **Resultado:** 60 leituras
-![Total leituras](docs/img/04-total-leituras.png)
+![Total leituras](02-total-leituras.png)
 
 #### 3. Status da bomba
 ```sql
@@ -93,7 +93,7 @@ GROUP BY bomba_status
 ORDER BY total DESC;
 ```
 **Resultado:** DESLIGADA: 45 | LIGADA: 15
-![Status bomba](docs/img/05-status-bomba.png)
+![Status bomba](03-status-bomba.png)
 
 #### 4. Médias dos sensores
 ```sql
@@ -104,7 +104,7 @@ SELECT
 FROM LEITURAS_ALFACE;
 ```
 **Resultado:** pH médio: 6.47 | Umidade média: 78.33% | Temperatura média: 22.6°C
-![Médias sensores](docs/img/06-medias-sensores.png)
+![Médias sensores](03-status-bomba.png)
 
 #### 5. Leituras com bomba ligada
 ```sql
@@ -137,7 +137,7 @@ FROM LEITURAS_ALFACE
 GROUP BY recomendacao
 ORDER BY total DESC;
 ```
-![Recomendações](docs/img/07-consulta-recomendacoes.png)
+![Recomendações](06-dashboard-tabela.png)
 
 ---
 
@@ -163,8 +163,8 @@ pip install streamlit pandas
 
 ### Prints da dashboard
 
-![Dashboard geral](docs/img/08-dashboard-geral.png)
-![Dashboard gráficos](docs/img/09-dashboard-graficos.png)
+![Dashboard geral](04-dashboard-geral.png)
+![Dashboard gráficos](05-dashboard-graficos.png)
 
 ---
 
